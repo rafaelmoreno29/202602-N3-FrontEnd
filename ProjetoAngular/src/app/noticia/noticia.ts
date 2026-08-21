@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-noticia',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './noticia.css',
 })
 export class Noticia {
-
+  readonly active = signal(1);
 }
