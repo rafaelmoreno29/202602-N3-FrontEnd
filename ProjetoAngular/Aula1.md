@@ -42,7 +42,7 @@ src/
 ### 1. Criação do projeto com Angular CLI
 
 ```bash
-ng new ProjetoAngular
+ng new ProjetoAngular --standalone=false --routing
 ```
 
 Gera a estrutura inicial com `AppModule`, roteamento e arquivos de configuração (`angular.json`, `tsconfig.json`).
@@ -113,6 +113,7 @@ Organiza os componentes na página usando o container do Bootstrap:
 <div class="container">
   <app-menu-superior></app-menu-superior>
   <app-destaque></app-destaque>
+  <app-noticia></app-noticia>
   <router-outlet />
 </div>
 ```
