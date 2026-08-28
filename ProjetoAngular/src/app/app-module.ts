@@ -10,6 +10,9 @@ import { Noticia } from './noticia/noticia';
 import { Home } from './home/home';
 import { Cliente } from './cliente/cliente';
 import { PaginaNaoEncontrada } from './pagina-nao-encontrada/pagina-nao-encontrada';
+import { Calculadora } from './calculadora/calculadora';
+import { FormsModule } from '@angular/forms';
+import { Desconto } from './desconto/desconto';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,9 @@ import { PaginaNaoEncontrada } from './pagina-nao-encontrada/pagina-nao-encontra
     Noticia,
     Home,
     Cliente,
-    PaginaNaoEncontrada
+    PaginaNaoEncontrada,
+    Calculadora,
+    Desconto
   ],
   imports: [
     BrowserModule,
@@ -27,7 +32,8 @@ import { PaginaNaoEncontrada } from './pagina-nao-encontrada/pagina-nao-encontra
     NgbModule,
     NgbCarousel, NgbSlide,
     NgbNavContent, NgbNav, NgbNavItem, NgbNavItemRole,
-    NgbNavLinkButton, NgbNavLinkBase, NgbNavOutlet
+    NgbNavLinkButton, NgbNavLinkBase, NgbNavOutlet,
+    FormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()

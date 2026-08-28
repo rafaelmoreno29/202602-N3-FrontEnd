@@ -1,0 +1,9 @@
+<label class="form-label">Valor do Produto</label>
+<input type="number" [(ngModel)]="valorProduto" class="form-control" />
+<label class="form-label">% de Desconto</label>
+<input type="number" [(ngModel)]="percentualDesconto" class="form-control" />
+
+<label class="form-label ">Valor Final</label>
+<input type="number" [(ngModel)]="valorFinal" class="form-control" readonly />
+<button class="btn btn-primary" (click)="calcularDesconto()">
+    Calcular</button>

@@ -1,1 +1,5 @@
-<p>cliente works!</p>
+<p>Nome: {{ nome }}</p>
+<input type="number" [(ngModel)]="qtdeClick" />
+<button class="btn btn-primary" (click)="alterarQtdeClick(1)">+1</button>
+<button class="btn btn-danger" (click)="alterarQtdeClick(-1)">-1</button>
+{{ qtdeClick }}
