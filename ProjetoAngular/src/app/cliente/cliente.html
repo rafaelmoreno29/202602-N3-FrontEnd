@@ -3,3 +3,53 @@
 <button class="btn btn-primary" (click)="alterarQtdeClick(1)">+1</button>
 <button class="btn btn-danger" (click)="alterarQtdeClick(-1)">-1</button>
 {{ qtdeClick }}
+
+<div class="row">
+    <div class="col-12">
+        <input id="mostrar" type="checkbox" [(ngModel)]="mostrarTabela" />
+        <label for="mostrar">Mostrar Tabela</label>
+    </div>
+</div>
+
+<input class="form-control" type="text" [(ngModel)]="nome" placeholder="Digite o nome do cliente" />
+<button class="btn btn-primary" (click)="adicionarCliente()">Adicionar Cliente</button>
+
+@if(mostrarTabela){
+<div class="row">
+    <div class="col-12">
+        <input class="form-control" type="text" [(ngModel)]="pesquisar" placeholder="Digite o nome do cliente" />
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (cliente of listaClientes; track cliente.id) {
+                <tr>
+                    <td>{{cliente.id}}</td>
+                    <td [style]="{'background-color' : 
+                    cliente.nome == pesquisar ? 'yellow' : 'transparent'}">{{cliente.nome}}</td>
+                    <td [ngClass]="{'ativo':cliente.ativo,
+                        'inativo':!cliente.ativo
+                    }">{{cliente.ativo ? "Ativo" : "Inativo"}}</td>
+                    <td>
+                        @switch (cliente.ativo) {
+                        @case(true) {
+                        <button (click)="cliente.ativo=!cliente.ativo" class="btn btn-danger">Desativar</button>
+                        }
+                        @case(false) {
+                        <button (click)="cliente.ativo=!cliente.ativo" class="btn btn-success">Ativar</button>
+                        }
+                        }
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+}
