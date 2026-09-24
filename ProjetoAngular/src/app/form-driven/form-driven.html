@@ -1,0 +1,28 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" name="nome" [(ngModel)]="nome" required />
+        @if(form.submitted && form.controls?.['nome']?.errors?.['required']){
+        <div class="alert alert-danger mt-2">
+            Nome é obrigatório
+        </div>
+        }
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">E-mail</label>
+        <input type="email" class="form-control" name="email" [(ngModel)]="email" required email />
+        @if(form.submitted && form.controls?.['email']?.errors?.['required']){
+        <div class="alert alert-danger mt-2">
+            E-mail é obrigatório
+        </div>
+        }
+        @if(form.submitted && form.controls?.['email']?.errors?.['email']){
+        <div class="alert alert-danger mt-2">
+            E-mail é inválido
+        </div>
+        }
+    </div>
+    <input type="submit" class="btn btn-primary" value="Salvar" />
+    <input type="reset" class="btn btn-secondary" value="Cancelar" />
+
+</form>

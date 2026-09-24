@@ -13,6 +13,9 @@ import { PaginaNaoEncontrada } from './pagina-nao-encontrada/pagina-nao-encontra
 import { Calculadora } from './calculadora/calculadora';
 import { FormsModule } from '@angular/forms';
 import { Desconto } from './desconto/desconto';
+import { FormPai } from './form-pai/form-pai';
+import { FormDriven } from './form-driven/form-driven';
+import { FormReactive } from './form-reactive/form-reactive';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { Desconto } from './desconto/desconto';
     Cliente,
     PaginaNaoEncontrada,
     Calculadora,
-    Desconto
+    Desconto,
+    FormPai,
+    FormDriven,
+    FormReactive
   ],
   imports: [
     BrowserModule,
