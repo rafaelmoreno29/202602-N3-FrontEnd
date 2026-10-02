@@ -11,7 +11,7 @@ import { Home } from './home/home';
 import { Cliente } from './cliente/cliente';
 import { PaginaNaoEncontrada } from './pagina-nao-encontrada/pagina-nao-encontrada';
 import { Calculadora } from './calculadora/calculadora';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Desconto } from './desconto/desconto';
 import { FormPai } from './form-pai/form-pai';
 import { FormDriven } from './form-driven/form-driven';
@@ -39,7 +39,7 @@ import { FormReactive } from './form-reactive/form-reactive';
     NgbCarousel, NgbSlide,
     NgbNavContent, NgbNav, NgbNavItem, NgbNavItemRole,
     NgbNavLinkButton, NgbNavLinkBase, NgbNavOutlet,
-    FormsModule
+    FormsModule, ReactiveFormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()

@@ -1,1 +1,22 @@
-<p>form-reactive works!</p>
+<form [formGroup]="form" (ngSubmit)="enviar()">
+    <input formControlName="nome" type="text" class="form-control mb-3" placeholder="nome">
+    @if(form.get('nome')?.invalid &&
+    (form.get('nome')?.touched || form.get('nome')?.dirty)) {
+    <div class="alert alert-danger">Nome é obrigatório</div>
+    }
+    <input formControlName="email" type="email" class="form-control mb-3" placeholder="email">
+    @if(form.get('email')?.invalid
+    && form.get('email')?.errors?.['required'] &&
+    (form.get('email')?.touched || form.get('email')?.dirty)) {
+    <div class="alert alert-danger">Email é obrigatório</div>
+    }
+    @if(form.get('email')?.invalid
+    && form.get('email')?.errors?.['email'] &&
+    (form.get('email')?.touched || form.get('email')?.dirty)) {
+    <div class="alert alert-danger">Email é inválido</div>
+    }
+    <button [disabled]="!form.valid" type="submit" class="btn btn-primary">Enviar</button>
+    <button type="reset" class="btn btn-secondary">Limpar</button>
+</form>
+{{form.value | json}}
+{{"válido: " + form.valid}}
