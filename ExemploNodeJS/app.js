@@ -1,7 +1,16 @@
 const express = require('express');
+const usuarioRouter = require('./routes/usuarioRouter');
+
 const app = express();
 app.use(express.json());
 
+app.use('/usuario', usuarioRouter);
+
+
+app.listen(3000, () => {
+    console.log('Servidor rodando na porta 3000');
+});
+/*
 app.get('/', (req, res) => {
     res.json({ mensagem: 'Olá, mundo!' });
 });
@@ -30,7 +39,4 @@ app.post('/maior-numero', (req, res) => {
 app.get('/numeros', (req, res) => {
     res.json(numeros);
 });
-
-app.listen(3000, () => {
-    console.log('Servidor rodando na porta 3000');
-});
+*/
